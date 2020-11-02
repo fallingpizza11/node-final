@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column
+}
+
+a {
+  color: #00B7FF;
+}
+
+.review h3  {
+  margin-bottom: 0px;
+}
+
+.review p {
+  margin-top: 6px;
+}

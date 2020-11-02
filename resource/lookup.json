@@ -1,0 +1,34 @@
+{
+    "size": {
+        "6inch": 6,
+        "12inch": 12
+    },
+    "sauce": {
+        "Red": 0,
+        "White": 0
+    },
+    "crust": {
+        "Regular": 0,
+        "Thin": 0,
+        "Cheese Stuffed": 2
+    },
+    "cheese": {
+        "Mozzarella": 0,
+        "Provolone": 0,
+        "Feta": 1
+    },
+    "meat": {
+        "Peperoni": 1,
+        "Canadian Bacon": 1,
+        "Prosciutto": 2,
+        "Sardines": 1,
+        "Chicken": 1
+    },
+    "veg": {
+        "Bell Peppers": 0.50,
+        "Tomoatoes": 0.50,
+        "Mushrooms": 1,
+        "Jalapeños": 1,
+        "Black Olives": 1
+    }
+}

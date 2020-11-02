@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--- Document By: Isaac Giuricich -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/js/client.js"></script>
+    <title>Pizza!</title>
+</head>
+
+<body>
+    <h1>PIZZA!</h1>
+    <form action="/review" method="post" id="pizza-form">
+        <section class="pizza-selection">
+
+          <div class="size">
+            <label for="6inch">6"Pizza</label>
+            <input type="radio" name="size" id="6inch" value="6inch">
+            <label for="12inch">12" Pizza</label>
+            <input type="radio" name="size" id="12inch" value="12inch" checked>
+          </div>
+
+          <div class="sauce">
+            <label for="red">Red Sauce</label>
+            <input type="radio" name="sauce" id="red" value="Red" checked>
+            <label for="white">Whtie Sauce</label>
+            <input type="radio" name="sauce" id="white" value="White">
+          </div>
+
+          <div class="crust">
+            <label for="regular">Regular Crust</label>
+            <input type="radio" name="crust" id="regular" value="Regular" checked>
+            <label for="thin">Thin Crust</label>
+            <input type="radio" name="crust" id="thin" value="Thin">
+            <label for="cheese-stuff">Cheese Stuffed Crust</label>
+            <input type="radio" name="crust" id="cheese-stuff" value="Cheese Stuffed">
+          </div>
+
+          <div class="cheese">
+            <label for="mozz">Mozzarella</label>
+            <input type="checkbox" name="cheese" id="mozz" value="Mozzarella" checked>
+            <label for="provo">Provolone</label>
+            <input type="checkbox" name="cheese" id="provo" value="Provolone">
+            <label for="feta">Feta Cheese</label>
+            <input type="checkbox" name="cheese" id="feta" value="Feta">
+          </div>
+
+          <div class="meat">
+            <label for="pep">Peperoni</label>
+            <input type="checkbox" name="meat" id="pep" value="Peperoni">
+            <label for="can-bacon">Canadian Bacon</label>
+            <input type="checkbox" name="meat" id="can-bacon" value="Canadian Bacon">
+            <label for="pros">Prosciutto</label>
+            <input type="checkbox" name="meat" id="pros" value="Prosciutto">
+            <label for="sardine">Sardines</label>
+            <input type="checkbox" name="meat" id="sardine" value="Sardines">
+            <label for="chicken">Chicken</label>
+            <input type="checkbox" name="meat" id="chicken" value="Chicken">
+          </div>
+
+          <div class="veg">
+            <label for="bell">Bell Peppers</label>
+            <input type="checkbox" name="veg" id="bell" value="Bell Peppers">
+            <label for="tomato">Tomoatoes</label>
+            <input type="checkbox" name="veg" id="tomato" value="Tomoatoes">
+            <label for="mush">Mushrooms</label>
+            <input type="checkbox" name="veg" id="mush" value="Mushrooms">
+            <label for="spicy">Jalapeños</label>
+            <input type="checkbox" name="veg" id="spicy" value="Jalapeños">
+            <label for="olives">Black Olives</label>
+            <input type="checkbox" name="veg" id="olives" value="Black Olives">
+          </div>
+
+        </section>
+        <input type="submit" value="Submit!" id="submit">
+    </form>
+</body>
+
+</html>
