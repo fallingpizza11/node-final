@@ -1,6 +1,2 @@
-mongo server location
-
-const uri = "mongodb+srv://admin:<password>@comp2912.vzaf6.mongodb.net/<dbname>?retryWrites=true&w=majority"
-
-dbname = A00956627
-user / pass = admin
+if you want to run this with a local mongoDB server in 'order.js' uncomment line 15 and comment line 18 
+you can also view a live version with the exact same code as this repository at giuricich.ca i'll keep it live for a week or so 
