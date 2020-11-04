@@ -1,0 +1,14 @@
+{
+    "pizzas": [
+        {"pizza":{"cheese":["Mozzarella"],"meat":[],"veg":[],"size":"12inch","sauce":"Red","crust":"Regular"}},
+        {"pizza":{"cheese":["Mozzarella"],"meat":[],"veg":[],"size":"6inch","sauce":"Red","crust":"Regular"}},
+        {"pizza":{"cheese":["Feta"],"meat":[],"veg":[],"size":"12inch","sauce":"Red","crust":"Regular"}},
+        {"pizza":{"cheese":["Mozzarella"],"meat":["Peperoni","Canadian Bacon","Prosciutto","Sardines","Chicken"],"veg":[],"size":"6inch","sauce":"Red","crust":"Regular"}},
+        {"pizza":{"cheese":["Mozzarella"],"meat":[],"veg":["Bell Peppers","Tomoatoes","Mushrooms","Jalapeños","Black Olives"],"size":"6inch","sauce":"Red","crust":"Regular"}},
+        {"pizza":{"cheese":["Mozzarella","Feta"],"meat":["Peperoni","Canadian Bacon","Prosciutto","Sardines"],"veg":["Black Olives"],"size":"12inch","sauce":"Red","crust":"Cheese Stuffed"}},
+        {"pizza":{"cheese":["Feta"],"meat":["Prosciutto"],"veg":["Tomoatoes","Mushrooms","Black Olives"],"size":"6inch","sauce":"Red","crust":"Cheese Stuffed"}},
+        {"pizza":{"cheese":["Mozzarella","Provolone"],"meat":["Peperoni"],"veg":[],"size":"12inch","sauce":"White","crust":"Thin"}},
+        {"pizza":{"cheese":["Mozzarella","Provolone","Feta"],"meat":["Peperoni","Canadian Bacon","Prosciutto","Sardines","Chicken"],"veg":["Bell Peppers","Tomoatoes","Mushrooms","Jalapeños","Black Olives"],"size":"12inch","sauce":"White","crust":"Cheese Stuffed"}},
+        {"pizza":{"cheese":["Mozzarella","Provolone","Feta"],"meat":["Peperoni","Canadian Bacon","Prosciutto","Sardines","Chicken"],"veg":["Bell Peppers","Tomoatoes","Mushrooms","Jalapeños","Black Olives"],"size":"6inch","sauce":"White","crust":"Cheese Stuffed"}}
+    ]
+}
