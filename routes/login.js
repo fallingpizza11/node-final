@@ -16,15 +16,10 @@ router.post('/signup', (req, res, next) => {
             return next(err)    // TODO: might have to remove the return or remove the res.json response
         }
         console.log('Hello: ', user.username)
-        req.logIn(user, err => {
-            console.log('error logging in user ' + err)
-            return next(err)
-        })
-        console.log('you are logged in!');
     })
 
         
-    res.redirect('/thank')   // go to the index page now that the user has an account
+    res.redirect('/login')   // go to the index page now that the user has an account
 })
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), (req, res) => {

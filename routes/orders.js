@@ -18,12 +18,22 @@ const mongoDB = 'mongodb+srv://admin:admin@cluster0.vzaf6.mongodb.net/A00956627?
 // const mongoDB = 'mongodb://localhost/A00956627'
 
 
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, () => {
   console.log('connected to database!')
 })
 
+router.get('/history', isLoggedIn, async (req, res) => {
+  try {
+    const orderHistory = await Order.find({username: req.user.username})
+    res.json(orderHistory)
+  } catch (err) {
+    res.send('there has been an error finding the order history' + err)
+  }
+})
+
+
 // getting order back from the database
-router.get('/:orderId', async function(req, res, next) {
+router.get('/:orderId', isLoggedIn, async function(req, res, next) {
   try {
     // returns specific order from the 'order collection'
     const gotOrders = await Order.findById(req.params.orderId)
@@ -34,7 +44,7 @@ router.get('/:orderId', async function(req, res, next) {
 });
 
 // sending order to the database
-router.post('/', async (req, res) => {
+router.post('/', isLoggedIn, async (req, res) => {
   let file = fs.readFileSync('./resource/lookup.json') // this might be a problem depending if its running on a linux machine or windows
   let lookup = JSON.parse(file)
   
@@ -50,7 +60,8 @@ router.post('/', async (req, res) => {
   const order = new Order({
     pizza: pizza,
     price: calculator.calculate(pizza, lookup),
-    status: "created"
+    status: "created",
+    username: req.user.username
   })
 
   try {
@@ -62,7 +73,7 @@ router.post('/', async (req, res) => {
 })
 
 // updating order
-router.patch('/:orderId', async (req, res) => {
+router.patch('/:orderId', isLoggedIn, async (req, res) => {
   try {
     const updatedOrder = await Order.updateOne({ _id: req.params.orderId }, { $set: { status: req.body.status }})
     res.json(updatedOrder)
@@ -72,7 +83,8 @@ router.patch('/:orderId', async (req, res) => {
 })
 
 //deleting order
-router.delete('/:orderId', async (req, res) => {
+router.delete('/:orderId', isLoggedIn, async (req, res) => {
+  
   try {
     const deletedOrder = await Order.deleteOne({ _id: req.params.orderId })
     res.json(deletedOrder)
@@ -80,5 +92,17 @@ router.delete('/:orderId', async (req, res) => {
     res.send('there has been an error deleting the object: ' + err)
   }
 })
+
+
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) {
+    console.log('you have access');
+    return next()
+  }
+  console.log('i banish u to the shadow realm');
+  res.redirect('/login')
+}
+
+
 
 module.exports = router;

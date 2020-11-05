@@ -17,7 +17,9 @@ const orderSchema = mongoose.Schema({
 
     price: Number,
 
-    status: String
+    status: String,
+
+    username: String
 })
 
 module.exports = mongoose.model('Order', orderSchema)
