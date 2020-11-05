@@ -35,7 +35,7 @@ router.get('/:orderId', async function(req, res, next) {
 
 // sending order to the database
 router.post('/', async (req, res) => {
-  let file = fs.readFileSync('../resource/lookup.json')
+  let file = fs.readFileSync('./resource/lookup.json') // this might be a problem depending if its running on a linux machine or windows
   let lookup = JSON.parse(file)
   
   const pizza = {

@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 
+const session = require('cookie-session')
 const passport = require('passport')
 const Account = require('./models/account')
 const LocalStrat = require('passport-local').Strategy
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({ keys: ['keyone', 'keytwo', 'keythree']}))
 app.use(passport.initialize())
 app.use(passport.session())
 
