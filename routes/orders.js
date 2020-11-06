@@ -47,6 +47,7 @@ router.get('/:orderId', isLoggedIn, async function(req, res, next) {
 // sending order to the database
 router.post('/', isLoggedIn, async (req, res) => {
   let file = fs.readFileSync(path.join(__dirname, '../resource', 'lookup.json'))
+  let lookup = JSON.parse(file)
   
   const pizza = {
     size: req.body.size,
