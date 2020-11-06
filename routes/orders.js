@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const fs = require('fs')
+const path = require('path')
 
 const priceCalc = require('../price-calc')
 const calculator = new priceCalc()
@@ -45,8 +46,7 @@ router.get('/:orderId', isLoggedIn, async function(req, res, next) {
 
 // sending order to the database
 router.post('/', isLoggedIn, async (req, res) => {
-  let file = fs.readFileSync('./resource/lookup.json') // this might be a problem depending if its running on a linux machine or windows
-  let lookup = JSON.parse(file)
+  let file = fs.readFileSync(path.join(__dirname, '../resource', 'lookup.json'))
   
   const pizza = {
     size: req.body.size,
