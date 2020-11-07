@@ -1,7 +1,11 @@
+/* various global styles */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 form {
@@ -13,11 +17,32 @@ form {
   margin-bottom: 5px;
 }
 
+section h3  {
+  margin-bottom: 0px;
+}
+
+section h3:first-of-type  {
+  margin-top: 0px;
+}
+
+section p {
+  margin-top: 6px;
+}
+
 a {
   color: #00B7FF;
   display: block;
 }
 
+button {
+  font-family: inherit;
+}
+
+#submit {
+  font-family: inherit;
+}
+
+/* review page styles */
 
 .review-header {
   display: inherit;
@@ -59,19 +84,6 @@ body > button {
 
 #loginInfo #login, #loginInfo #signup {
   width: 80px;
-}
-
-/* various other styles */
-section h3  {
-  margin-bottom: 0px;
-}
-
-section h3:first-of-type  {
-  margin-top: 0px;
-}
-
-section p {
-  margin-top: 6px;
 }
 
 /* history page styles */
