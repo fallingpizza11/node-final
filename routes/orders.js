@@ -97,7 +97,6 @@ router.delete('/:orderId', isLoggedIn, async (req, res) => {
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()) {
-    console.log('you have access');
     return next()
   }
   console.log('i banish u to the shadow realm');

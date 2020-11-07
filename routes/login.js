@@ -11,10 +11,9 @@ router.get('/', function(req, res) {
 
 router.post('/signup', (req, res, next) => {
     const newAccount = Account.register(new Account({username: req.body.username}), req.body.password, (err, user) => {
-        if (err) {
-            res.json({success: false, message: 'account could not be saved', error: err})
-            return next(err)    // TODO: might have to remove the return or remove the res.json response
-        }
+
+        if (err) return next(err)
+        
         console.log('Hello: ', user.username)
     })
 

@@ -1,4 +1,5 @@
 window.onload = function() {
+
     var form = document.getElementById('loginInfo')
     const loginButton = document.getElementById('login')
     const signupButton = document.getElementById('signup')

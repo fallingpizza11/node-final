@@ -11,7 +11,6 @@ router.get('/', isLoggedIn, function(req, res, next) {
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()) {
-    console.log('you have access');
     return next()
   }
   console.log('i banish u to the shadow realm');

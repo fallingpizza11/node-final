@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="/js/authPage.js"></script>
     <title>Login to Pizza</title>
 </head>
 <body>
     <h1>Please Enter Your Login Info</h1>
+    <p>if you do not have an account, enter your info then click 'Signup', after that enter your info again and click 'Login'</p>
     <form action="post" id="loginInfo">
         <input type="text" name="username" placeholder="Username" autocomplete="off">
         <input type="password" name="password" placeholder="Password" autocomplete="off">
-        <input type="submit" value="Login!" id="login">
-        <input type="submit" value="Signup!" id="signup">
-
+        <div class="buttons">
+            <input type="submit" value="Login!" id="login">
+            <input type="submit" value="Signup!" id="signup">
+        </div>
     </form>
 </body>
 </html>

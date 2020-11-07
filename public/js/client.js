@@ -109,19 +109,29 @@ window.onload = function() {
                     if (tastyPizza.hasOwnProperty(key)) {
                         const element = tastyPizza[key]
                         if (element.length > 0) {
-                        const elementTitle = document.createElement('h3')
-                        elementTitle.innerHTML = titleCase(key)
-                        const elementOption = document.createElement('p')
-                        elementOption.innerHTML = element
-                        section.appendChild(elementTitle)
-                        section.appendChild(elementOption)
+                            if(element.constructor === Array) {
+                                const elementTitle = document.createElement('h3')
+                                elementTitle.innerHTML = titleCase(key)
+                                const elementOption = document.createElement('p')
+                                elementOption.innerHTML = element.join(', ')
+                                section.appendChild(elementTitle)
+                                section.appendChild(elementOption)
+                            }
+                            else {
+                                const elementTitle = document.createElement('h3')
+                                elementTitle.innerHTML = titleCase(key)
+                                const elementOption = document.createElement('p')
+                                elementOption.innerHTML = element
+                                section.appendChild(elementTitle)
+                                section.appendChild(elementOption)
+                            }
                         }
                     }
                 }
                 const elementTitle = document.createElement('h3')
                 elementTitle.innerHTML = 'Cost'
                 const elementOption = document.createElement('p')
-                elementOption.innerHTML = '$ ' + data.price
+                elementOption.innerHTML = '$ ' + (Math.round(data.price * 100) / 100).toFixed(2)
                 section.appendChild(elementTitle)
                 section.appendChild(elementOption)
             })
